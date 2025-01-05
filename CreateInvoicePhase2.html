@@ -1,0 +1,53 @@
+<apex:page controller="CreateInvoiceController">
+    <h1>Invoice Parameters</h1>
+    
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Origin Record</td>
+            <td>{!originRecord}</td>
+        </tr>
+        <tr>
+            <td>Account</td>
+            <td>{!account}</td>
+        </tr>
+        <tr>
+            <td>Invoice Date</td>
+            <td>{!invoiceDate}</td>
+        </tr>
+        <tr>
+            <td>Invoice Due Date</td>
+            <td>{!invoiceDueDate}</td>
+        </tr>
+        <tr>
+            <td>Child Relationship Name</td>
+            <td>{!childRelationshipName}</td>
+        </tr>
+        
+    </table>
+
+    <h2>Opportunity Line Items</h2>
+    <table border="1">
+        <tr>
+            <th>Line Item Description</th>
+            <th>Line Item Quantity</th>
+            <th>Line Item Unit Price</th>
+        </tr>
+        <apex:repeat value="{!lineItems}" var="item">
+            <tr>
+                <td>{!item.Description}</td>
+                <td>{!item.Count__c}</td>
+                <td>{!item.Unit_Price__c}</td>
+            </tr>
+        </apex:repeat>
+    </table>
+
+    <apex:form >
+        <apex:commandButton action="{!generateXeroJson}" value="Show JSON" />
+        
+        <apex:commandButton action="{!sendToXero}" value="Send to Xero" />
+    </apex:form>
+</apex:page>
