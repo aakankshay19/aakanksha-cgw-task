@@ -1,0 +1,41 @@
+<apex:page controller="CreateInvoiceController">
+    <h1>Invoice Parameters</h1>
+    <table border="1">
+        <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Origin Record</td>
+            <td>{!originRecord}</td>
+        </tr>
+        <tr>
+            <td>Account</td>
+            <td>{!account}</td>
+        </tr>
+        <tr>
+            <td>Invoice Date</td>
+            <td>{!invoiceDate}</td>
+        </tr>
+        <tr>
+            <td>Invoice Due Date</td>
+            <td>{!invoiceDueDate}</td>
+        </tr>
+        <tr>
+            <td>Child Relationship Name</td>
+            <td>{!childRelationshipName}</td>
+        </tr>
+        <tr>
+            <td>Line Item Description</td>
+            <td>{!lineItemDescription}</td>
+        </tr>
+        <tr>
+            <td>Line Item Quantity</td>
+            <td>{!lineItemQuantity}</td>
+        </tr>
+        <tr>
+            <td>Line Item Unit Price</td>
+            <td>{!lineItemUnitPrice}</td>
+        </tr>
+    </table>
+</apex:page>
