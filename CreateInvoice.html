@@ -25,17 +25,25 @@
             <td>Child Relationship Name</td>
             <td>{!childRelationshipName}</td>
         </tr>
-        <tr>
-            <td>Line Item Description</td>
-            <td>{!lineItemDescription}</td>
-        </tr>
-        <tr>
-            <td>Line Item Quantity</td>
-            <td>{!lineItemQuantity}</td>
-        </tr>
-        <tr>
-            <td>Line Item Unit Price</td>
-            <td>{!lineItemUnitPrice}</td>
-        </tr>
+
+        <apex:repeat value="{!lineItems}" var="item">
+            <tr>
+                <td>Line Item Description</td>
+                <td>{!item.Description}</td>
+            </tr>
+            <tr>
+                <td>Line Item Quantity</td>
+                <td>{!item.Count__c}</td>
+            </tr>
+            <tr>
+                <td>Line Item Unit Price</td>
+                <td>{!item.Unit_Price__c}</td>
+            </tr>
+        </apex:repeat>
     </table>
+
+
+    <apex:form >
+        <apex:commandButton action="{!showJson}" value="Show JSON" />
+    </apex:form>
 </apex:page>
